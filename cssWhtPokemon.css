@@ -1,0 +1,28 @@
+#dispPok{
+    width: 1000px;
+    display: inline-block;
+
+}
+#pokDetl{
+    width: 200px;
+    height: 500px;
+    outline: 4px solid red;
+    display: inline-block;
+    position: fixed;
+    top: 100px;
+    padding-left: 10px;
+
+
+}
+
+#pokDetl img{
+    margin-left: 37px;
+
+
+}
+#pokDetl p{
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+}
