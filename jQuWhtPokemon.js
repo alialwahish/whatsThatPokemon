@@ -6,10 +6,11 @@ $(document).ready(function(){
     for(var i=1;i<151;i++){
     $('#dispPok').append('<img alt='+i+' src="https://pokeapi.co/media/img/'+i+'.png" />');
     }
-    $('img').click(function(){
+    $('img').on("click",function(){
+        $("#pokDetl").children().hide();
         var ni=$(this).attr("alt")
         $.get("https://pokeapi.co/api/v2/pokemon/"+ni+"/",function(res){
-        console.log(res);
+        // console.log(res);
         $('#pokDetl').append("<h1>"+res.name+"</h1>");
         $('#pokDetl').append('<img  src="https://pokeapi.co/media/img/'+ni+'.png" />');
         var html_str ="";
@@ -20,9 +21,9 @@ $(document).ready(function(){
         }
         html_str+="</ul>";
        
-        html_str+="<h2>Height</h2><p>"+res.height+"</p>"+"<h2>Weight</h2>"+res.weight;
+        html_str+="<h2>Height</h2><p>"+res.height+"</p>"+"<h2>Weight</h2>"+"<p>"+res.weight+"</p>";
         $('#pokDetl').append(html_str);
-
+        
     },'json');
     })
 });
